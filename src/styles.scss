@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+:root{
+    --bg: #25272b;
+    --bg-lighter: #a1a5ae;
+    --test: 34;
+    --primary: #daaa0e;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background: var(--bg);
+    color: #fff;
+    font-family: 'Roboto Mono', monospace;
+}

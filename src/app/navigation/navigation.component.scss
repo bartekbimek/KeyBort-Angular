@@ -1,0 +1,40 @@
+header{
+    position: relative;
+    top: 0; left: 0;
+    width: 100%;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    background: var(--bg);
+    .logo a{
+        color: #fff;
+        text-decoration: none;
+        padding: 1em;
+        span{
+            color: var(--bg-lighter);
+        }
+    }
+    nav{
+        ul{
+            display: flex;
+            list-style-type: none;
+            li{
+                a{
+                    padding: 1em;
+                    color:var(--bg-lighter);
+                    text-decoration: none;
+                    transition: color .1s;
+                    &:hover{
+                        color:#fff;
+                        
+                    }
+                }
+                .nav-active{
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
