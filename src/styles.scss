@@ -1,10 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap');
 :root{
     --bg: #25272b;
     --bg-lighter: #a1a5ae;
+    --bg-darker: #191b1d;
     --test: 34;
     --primary: #daaa0e;
+    --key-size: 3em;
 }
 *{
     padding: 0;

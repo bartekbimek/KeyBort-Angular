@@ -1,1 +1,16 @@
-null
+.main__heading {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  user-select: none;
+}
+
+.main__paragraph {
+  opacity: .5;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.main__details {
+  display: flex;
+  justify-content: space-between;
+}

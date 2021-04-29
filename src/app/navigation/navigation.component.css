@@ -8,7 +8,7 @@ header {
   justify-content: space-between;
   align-items: center;
   user-select: none;
-  background: var(--bg);
+  background: transparent;
 }
 
 header .logo a {
