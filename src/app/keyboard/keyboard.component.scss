@@ -6,7 +6,7 @@
 .keyboard__main{
     display: flex;
     flex-direction: column;
-    width: 52em;
+    width: 50.5em;
     margin-right: 1em; 
 }
 .main__row{
@@ -41,8 +41,8 @@
     justify-content: center;
     align-items: center;
     background: var(--bg);
-    flex-basis: 3em;
-    height: 3em;        
+    flex-basis: var(--key-size);
+    height: var(--key-size);        
     margin: 0.1875em;
     user-select: none;
     text-transform: uppercase;
@@ -53,8 +53,11 @@
     text-transform: Capitalize;
 }
 .key--space{
-    flex-grow: 13;
+    flex-grow: 11;
 }
 .key--capitalized{
     text-transform: capitalize;
+}
+.key--enter{
+    flex-grow: 2;
 }
