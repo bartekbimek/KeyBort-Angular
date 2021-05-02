@@ -17,4 +17,16 @@ body{
     background: var(--bg);
     color: #fff;
     font-family: 'Roboto Mono', monospace;
+    overflow: overlay;
+}
+body::-webkit-scrollbar{
+    width: .3em;
+    height: .3em;
+    background: transparent;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: #a1a5ae99;
+    &:hover{
+        background-color: #a1a5ae;
+    }
 }
