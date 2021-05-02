@@ -47,6 +47,14 @@
     user-select: none;
     text-transform: uppercase;
     font-weight: 600;
+    transition: background-color .3s, color .3s;
+}
+.checked{
+    background: #fff;
+    color: var(--bg-darker);
+}
+.pressed{
+    background: var(--primary);
 }
 .key--wide{
     flex-grow: 1;
