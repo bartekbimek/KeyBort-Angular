@@ -6,6 +6,9 @@ import { Injectable } from '@angular/core';
 export class KeyboardService {
   private checkedKeys:string[] = [];
   getCheckedKeys(){
+    this.checkedKeys.forEach((key) =>{
+      document.querySelector(`[key="${key}"]`).classList.add("checked");
+    });
     return this.checkedKeys;
   }
   addCheckedKeys(x:string){
@@ -14,7 +17,10 @@ export class KeyboardService {
     }
   }
   resetCheckedKeys(){
-    this.checkedKeys = [];
+    this.checkedKeys.forEach((key) =>{
+      document.querySelector(`[key="${key}"]`).classList.remove("checked");
+    })
+    return this.checkedKeys = [];
   }
   constructor() { }
 }

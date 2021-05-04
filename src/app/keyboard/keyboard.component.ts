@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, Output, EventEmitter } from '@angular/core';
 import { KeyboardService } from '../services/keyboard.service';
 
 @Component({
@@ -9,18 +9,19 @@ import { KeyboardService } from '../services/keyboard.service';
 
 export class KeyboardComponent implements OnInit {
   checkedKeys:string[] = [];
+  lastInput:string;
 
   @HostListener('window:keydown', ['$event']) 
   onKeyDown(key){
-    console.log(key.code)
+    console.log(key.key)
     key.preventDefault ? key.preventDefault() : key.returnValue = false;
     let pressedKey = document.querySelector(`[key="${key.code}"]`)
     pressedKey.classList.remove("checked");
     pressedKey.classList.add("pressed");
+    this.lastInput = key.key;
   }
   @HostListener('window:keyup', ['$event'])
   onKeyUp(key){
-    console.log(key.code)
     key.preventDefault ? key.preventDefault() : key.returnValue = false;
     let pressedKey = document.querySelector(`[key="${key.code}"]`)
     pressedKey.classList.remove("pressed");
@@ -31,8 +32,5 @@ export class KeyboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.checkedKeys = this.keyboardService.getCheckedKeys();
-    this.checkedKeys.forEach((key) =>{
-      document.querySelector(`[key="${key}"]`).classList.add("checked");
-    })
   }
 }

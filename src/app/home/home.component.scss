@@ -7,11 +7,29 @@
     align-items: center;
     user-select: none;
     margin-bottom: 2em;
-    .main__heading{
+    .title__heading{
         font-size: 2.5rem;
         margin-bottom: 1rem;
     }
-    .main__paragraph{
+    .title__paragraph{
         opacity: .6;
+    }
+}
+
+.main__console{
+    display: flex;
+    justify-content: space-between;
+    .console__reset-keyboard{
+        background: none;
+        color: var(--bg-lighter);
+        border: none;
+        font-family: inherit;
+        font-size: 1em;
+        cursor: pointer;
+        transition: color .2s;
+        outline: none;
+        &:hover{
+            color: #ad4343;
+        }
     }
 }
