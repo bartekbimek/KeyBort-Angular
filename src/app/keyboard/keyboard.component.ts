@@ -9,16 +9,17 @@ import { KeyboardService } from '../services/keyboard.service';
 
 export class KeyboardComponent implements OnInit {
   checkedKeys:string[] = [];
-  lastInput:string;
-
+  @Output() lastInputUpdate: EventEmitter<string> = new EventEmitter<string>();
+  sendLastInput(value:string){
+    this.lastInputUpdate.emit(value);
+  }
   @HostListener('window:keydown', ['$event']) 
   onKeyDown(key){
-    console.log(key.key)
     key.preventDefault ? key.preventDefault() : key.returnValue = false;
     let pressedKey = document.querySelector(`[key="${key.code}"]`)
     pressedKey.classList.remove("checked");
     pressedKey.classList.add("pressed");
-    this.lastInput = key.key;
+    this.sendLastInput(key.key);
   }
   @HostListener('window:keyup', ['$event'])
   onKeyUp(key){
@@ -27,6 +28,7 @@ export class KeyboardComponent implements OnInit {
     pressedKey.classList.remove("pressed");
     pressedKey.classList.add("checked");
     this.keyboardService.addCheckedKeys(key.code);
+    if(key.code === "PrintScreen") this.sendLastInput(key.key);
   } 
   constructor(private keyboardService: KeyboardService) { }
 

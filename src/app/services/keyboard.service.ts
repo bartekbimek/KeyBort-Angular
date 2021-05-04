@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class KeyboardService {
   private checkedKeys:string[] = [];
+  private lastInput:string;
   getCheckedKeys(){
     this.checkedKeys.forEach((key) =>{
       document.querySelector(`[key="${key}"]`).classList.add("checked");

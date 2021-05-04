@@ -7,15 +7,14 @@ import { KeyboardService } from '../services/keyboard.service'
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  lastInput:string;
+  lastInput: string;
   resetKeys(){
     this.keyboardService.resetCheckedKeys();
   }
-  @HostListener('window:keydown', ['$event'])
-  addItem(newItem:string){
-    this.lastInput = newItem;
-    console.log("kruwa"+newItem);
+  getLastInput(x){
+    this.lastInput = x;
   }
+
   constructor(private keyboardService: KeyboardService) { }
 
   ngOnInit(): void {

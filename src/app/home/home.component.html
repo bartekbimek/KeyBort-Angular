@@ -2,9 +2,9 @@
     <h1 class="title__heading">Test your keyboard!</h1>
     <p class="title__paragraph">Go to settings to change keyboard look</p>
 </div>
-<app-keyboard class="keyboard"></app-keyboard>
+<app-keyboard class="keyboard" (lastInputUpdate)="getLastInput($event)"></app-keyboard>
 <div class="main__console">
-    <p class="console__last-input">Last input: {{ 'kekW' }}</p>
+    <p class="console__last-input">Last input: {{ lastInput }}</p>
     <button class="console__reset-keyboard"(click)="resetKeys()">Reset keyboard</button>
     
 </div>
