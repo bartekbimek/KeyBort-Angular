@@ -8,23 +8,34 @@ import { Component, HostListener, OnInit } from '@angular/core';
 export class KeyboardComponent implements OnInit {
 
   @HostListener('window:keydown', ['$event'])
-  onClickDown(event){
-    event.preventDefault ? event.preventDefault() : event.returnValue = false;
-    console.log(document.querySelectorAll(`[key="${event.keyCode}"]`)[0]);
-    let x = document.querySelectorAll(`[key="${event.keyCode}"]`);
-    for(let i = 0; i<x.length; i++){
-      x[i].classList.remove("checked");
-      x[i].classList.add("pressed");
-    }  
+  onClickDown(key){
+    key.preventDefault ? key.preventDefault() : key.returnValue = false;
+    //console.log(key.key, key.keyCode, key.location)
+    if(key.location == 0){
+      let x = document.querySelector(`[key="${key.keyCode}"]`);
+      x.classList.remove("checked");
+      x.classList.add("pressed");
+    }
+    else{
+      let x = document.querySelector(`[key="${key.keyCode}"][location="${key.location}"]`);
+      x.classList.remove("checked");
+      x.classList.add("pressed");
+    }
   }
   @HostListener('window:keyup', ['$event'])
-  onClickUp(event){
-    console.log(document.querySelectorAll(`[key="${event.keyCode}"]`)[0]);
-    let x = document.querySelectorAll(`[key="${event.keyCode}"]`);
-    for(let i = 0; i<x.length; i++){
-      x[i].classList.remove("pressed");
-      x[i].classList.add("checked");
-    }  
+  onClickUp(key){
+    console.log(key.key, key.keyCode, key.location);
+    
+    if(key.location == 0){
+      let x = document.querySelector(`[key="${key.keyCode}"]`);
+      x.classList.remove("pressed");
+      x.classList.add("checked");
+    }
+    else{
+      let x = document.querySelector(`[key="${key.keyCode}"][location="${key.location}"]`);
+      x.classList.remove("pressed");
+      x.classList.add("checked");
+    }
   }
 
   constructor() { }

@@ -8,6 +8,7 @@ import { AboutComponent } from './about/about.component';
 import { SettingsComponent } from './settings/settings.component';
 import { HomeComponent } from './home/home.component';
 import { KeyboardComponent } from './keyboard/keyboard.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { KeyboardComponent } from './keyboard/keyboard.component';
     AboutComponent,
     SettingsComponent,
     HomeComponent,
-    KeyboardComponent
+    KeyboardComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
