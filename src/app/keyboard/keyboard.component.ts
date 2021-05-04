@@ -15,6 +15,8 @@ export class KeyboardComponent implements OnInit {
   }
   @HostListener('window:keydown', ['$event']) 
   onKeyDown(key){
+    //console.log(key);
+    
     key.preventDefault ? key.preventDefault() : key.returnValue = false;
     let pressedKey = document.querySelector(`[key="${key.code}"]`)
     pressedKey.classList.remove("checked");

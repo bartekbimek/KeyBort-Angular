@@ -1,5 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
-import { KeyboardComponent } from '../keyboard/keyboard.component';
+import { Component, OnInit } from '@angular/core';
 import { KeyboardService } from '../services/keyboard.service'
 @Component({
   selector: 'app-home',
@@ -12,13 +11,14 @@ export class HomeComponent implements OnInit {
     this.keyboardService.resetCheckedKeys();
   }
   getLastInput(x){
+    this.keyboardService.setLastInput(x);
     this.lastInput = x;
   }
 
   constructor(private keyboardService: KeyboardService) { }
 
   ngOnInit(): void {
-    
+    this.lastInput = this.keyboardService.getLastInput();
   }
 
 }
