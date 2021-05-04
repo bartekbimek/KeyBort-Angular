@@ -49,9 +49,20 @@
     font-weight: 600;
     transition: background-color .3s, color .3s;
 }
+.metaKey{
+    height: 100%;
+    width: 100%;
+    background: url("../../assets/metaKey.svg") no-repeat center center;
+    background-size: 1.3em;
+    transition: filter .2s;
+    filter: invert(100%);
+}
 .checked{
     background: #fff;
     color: var(--bg-darker);
+    .metaKey{
+        filter: invert(14%) sepia(6%) saturate(386%) hue-rotate(169deg) brightness(97%) contrast(109%);
+    }
 }
 .pressed{
     background: var(--primary);

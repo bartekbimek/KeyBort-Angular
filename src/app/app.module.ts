@@ -9,6 +9,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { HomeComponent } from './home/home.component';
 import { KeyboardComponent } from './keyboard/keyboard.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { KeyboardService } from './services/keyboard.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [KeyboardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
