@@ -1,33 +1,28 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core'
+import { Observable, of } from 'rxjs'
 
 @Injectable({
   providedIn: 'root'
 })
 export class KeyboardService {
-  private checkedKeys:string[] = [];
-  private lastInput:string;
-  setLastInput(x){
-    this.lastInput = x;
+  private checkedKeys:string[] = []
+  private lastKey:string;
+  getCheckedKeys():Observable<string[]>{
+    return of(this.checkedKeys)
   }
-  getLastInput(){
-    return this.lastInput
-  }
-  getCheckedKeys(){
-    this.checkedKeys.forEach((key) =>{
-      document.querySelector(`[key="${key}"]`).classList.add("checked");
-    });
-    return this.checkedKeys;
-  }
-  addCheckedKeys(x:string){
-    if(!this.checkedKeys.includes(x)){
-      return this.checkedKeys.push(x);
+  addCheckedKeys(currentKey:string){
+    if(!this.checkedKeys.includes(currentKey)){
+        return this.checkedKeys.push(currentKey)
     }
   }
   resetCheckedKeys(){
-    this.checkedKeys.forEach((key) =>{
-      document.querySelector(`[key="${key}"]`).classList.remove("checked");
-    })
-    return this.checkedKeys = [];
+    return this.checkedKeys = [], this.lastKey = null;
+  }
+  setLastKey(currentKey){
+    return this.lastKey = currentKey;
+  }
+  getLastKey():Observable<string>{
+    return of(this.lastKey)
   }
   constructor() { }
 }

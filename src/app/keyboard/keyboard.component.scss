@@ -1,6 +1,6 @@
 :host{
     display: flex;
-    background: var(--bg-darker);
+    background: var(--keyboard-bg);
     padding: 1em;
     margin-bottom: 1em;
 }
@@ -38,10 +38,12 @@
      }
 }
 .key{
+    border-radius: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: var(--bg);
+    color: var(--key-color);
+    background: var(--key-bg);
     flex-basis: var(--key-size);
     height: var(--key-size);        
     margin: 0.1875em;
@@ -56,17 +58,15 @@
     background: url("../../assets/metaKey.svg") no-repeat center center;
     background-size: 1.3em;
     transition: filter .2s;
-    filter: invert(100%);
+    filter: var(--meta-filter);
 }
 .checked{
-    background: #fff;
-    color: var(--bg-darker);
-    .metaKey{
-        filter: invert(14%) sepia(6%) saturate(386%) hue-rotate(169deg) brightness(97%) contrast(109%);
-    }
+    background: var(--key-checked-bg);
+    color: var(--key-checked-color);
 }
 .pressed{
-    background: var(--primary);
+    background: var(--key-pressed-bg);
+    color: var(--key-pressed-color);
 }
 .key--wide{
     flex-grow: 1;

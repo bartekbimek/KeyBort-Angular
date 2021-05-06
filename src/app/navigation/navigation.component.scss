@@ -13,27 +13,37 @@
             justify-content: flex-end;
             list-style-type: none;
             width: 100%;
+            color:var(--nav-text);
             .nav__item{
                 .nav__link{
                     padding: 1em;
-                    color:var(--bg-lighter);
+                    color: inherit;
                     text-decoration: none;
                     transition: color .1s;
                     &:hover{
-                        color:#fff;
+                        color: var(--body-color);
                     }
                     &:focus{
-                        color: #fff;
+                        color: var(--body-color);
+                    }
+                }
+                .nav__button{
+                    cursor: pointer;
+                    &:hover{
+                        color: var(--body-color);
+                    }
+                    &:focus{
+                        color: var(--body-color);
                     }
                 }
                 .nav-active{
-                    color: #fff;
+                    color: var(--body-color);
                 }
             }
             .nav__item--logo{
                 margin-right: auto;
                 .nav__link--logo span{
-                    color: #fff
+                    color: var(--body-color);
                 }
             }
         }

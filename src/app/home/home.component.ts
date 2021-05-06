@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core'
+import { Observable } from 'rxjs';
 import { KeyboardService } from '../services/keyboard.service'
 @Component({
   selector: 'app-home',
@@ -6,19 +7,22 @@ import { KeyboardService } from '../services/keyboard.service'
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  lastInput: string;
-  resetKeys(){
-    this.keyboardService.resetCheckedKeys();
+  lastInput:string;
+  getLastKey(lastKey){
+    this.lastInput = lastKey;
   }
-  getLastInput(x){
-    this.keyboardService.setLastInput(x);
-    this.lastInput = x;
+  resetKeys(){
+    document.querySelectorAll(".checked").forEach(key => {
+      key.classList.remove("checked")
+    })
+    this.keyboardService.resetCheckedKeys()
   }
 
   constructor(private keyboardService: KeyboardService) { }
 
   ngOnInit(): void {
-    this.lastInput = this.keyboardService.getLastInput();
+    this.keyboardService.getLastKey().subscribe((key) => {
+      this.lastInput = key;
+    })
   }
-
 }
