@@ -8,38 +8,38 @@ import { KeyboardService } from '../services/keyboard.service'
 })
 
 export class KeyboardComponent implements OnInit {
-  
+
   @Output() sendLastKey = new EventEmitter<string>()
 
-  checkedKeys:string[];
-  
-  @HostListener('window:keydown', ['$event']) 
-  onKeyDown(currentKey){
+  checkedKeys: string[];
+
+  @HostListener('window:keydown', ['$event'])
+  onKeyDown(currentKey) {
     currentKey.preventDefault ? currentKey.preventDefault() : currentKey.returnValue = false
     let pressedKey = document.querySelector(`[key="${currentKey.code}"]`)
     pressedKey.classList.remove("checked")
     pressedKey.classList.add("pressed")
-    if(currentKey.code !== "PrintScreen"){
+    if (currentKey.code !== "PrintScreen") {
       this.updateService(currentKey)
     }
   }
   @HostListener('window:keyup', ['$event'])
-  onKeyUp(key){
-    key.preventDefault ? key.preventDefault() : key.returnValue = false
-    let pressedKey = document.querySelector(`[key="${key.code}"]`)
+  onKeyUp(currentKey) {
+    currentKey.preventDefault ? currentKey.preventDefault() : currentKey.returnValue = false
+    let pressedKey = document.querySelector(`[key="${currentKey.code}"]`)
     pressedKey.classList.remove("pressed")
     pressedKey.classList.add("checked")
-    if(key.code === "PrintScreen"){
-      this.updateService(key)
+    if (currentKey.code === "PrintScreen") {
+      this.updateService(currentKey)
     }
   }
-  
-  updateService(key){
-    this.keyboardService.addCheckedKeys(key.code)
+
+  updateService(key) {
+    this.keyboardService.addCheckedKeys(key.key)
     this.keyboardService.setLastKey(key.key)
     this.sendLastKey.emit(key.key)
   }
-  
+
   constructor(private keyboardService: KeyboardService) { }
 
   ngOnInit(): void {

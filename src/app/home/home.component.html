@@ -4,9 +4,6 @@
 </div>
 <app-keyboard class="keyboard" (sendLastKey)="getLastKey($event)"></app-keyboard>
 <div class="main__console">
-    <p class="console__last-input" >Last input: {{ lastInput }}</p>
-    <button class="console__reset-keyboard"(click)="resetKeys()">Reset keyboard</button>
-    
+    <p class="console__last-input">Last input: {{ lastInput }}</p>
+    <button class="console__reset-keyboard" (click)="resetKeys()">Reset keyboard</button>
 </div>
-
-

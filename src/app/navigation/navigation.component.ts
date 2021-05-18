@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DarkmodeService } from '../services/darkmode.service';
 
 @Component({
   selector: 'app-navigation',
@@ -7,15 +6,23 @@ import { DarkmodeService } from '../services/darkmode.service';
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements OnInit {
-  darkmode:boolean;
-  themeSwitch(){
-    this.darkmode ? this.darkmodeService.darkModeOff() : this.darkmodeService.darkModeOn();
-    this.darkmode = this.darkmodeService.darkmode;
-    console.log("current mode: " + (this.darkmodeService.darkmode == true ? "darkmode" : "lightmode"));
+  lightmode: string;
+  themeSwitch() {
+    if (localStorage.getItem("theme") == undefined || localStorage.getItem("theme") == "dark") {
+      localStorage.setItem("theme", "light")
+      document.documentElement.classList.remove("darkmode")
+      document.documentElement.classList.add("lightmode")
+
+    }
+    else {
+      document.documentElement.classList.remove("lightmode")
+      document.documentElement.classList.add("darkmode")
+      localStorage.setItem("theme", "dark")
+    }
   }
-  constructor(private darkmodeService:DarkmodeService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.darkmode = this.darkmodeService.darkmode;
+
   }
 }

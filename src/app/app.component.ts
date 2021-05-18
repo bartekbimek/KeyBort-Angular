@@ -6,4 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  ngOnInit():void{
+    if(localStorage.getItem("theme") == "light"){
+      document.documentElement.classList.remove("darkmode")
+      document.documentElement.classList.add("lightmode")
+    }
+    else{
+      document.documentElement.classList.remove("lightmode")
+      document.documentElement.classList.add("darkmode")
+    }
+  }
 }

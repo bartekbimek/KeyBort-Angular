@@ -13,9 +13,22 @@
     --key-pressed-bg: rgb(110, 110, 110);
     --key-pressed-color: #fff;
     --key-size: 3em;
+    --meta-filter: invert(100%); 
+}
+.darkmode{
+    --bg: #25272b;
+    --body-color: #fff;
+    --nav-text: #a1a5ae;
+    --keyboard-bg: #191b1d;
+    --accent: #0e77da;//#daaa0e;
+    --key-bg: var(--bg);
+    --key-color: #fff;
+    --key-checked-bg: var(--accent);
+    --key-checked-color: #fff;
+    --key-pressed-bg: rgb(110, 110, 110);
+    --key-pressed-color: #fff;
+    --key-size: 3em;
     --meta-filter: invert(100%);
-
-    
 }
 .lightmode{
     --bg: #ffffff;

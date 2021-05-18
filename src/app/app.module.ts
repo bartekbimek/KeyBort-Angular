@@ -10,7 +10,6 @@ import { HomeComponent } from './home/home.component';
 import { KeyboardComponent } from './keyboard/keyboard.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { KeyboardService } from './services/keyboard.service';
-import { DarkmodeService } from './services/darkmode.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +25,7 @@ import { DarkmodeService } from './services/darkmode.service';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [KeyboardService, DarkmodeService],
+  providers: [KeyboardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
