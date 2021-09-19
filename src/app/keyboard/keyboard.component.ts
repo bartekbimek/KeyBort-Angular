@@ -35,7 +35,7 @@ export class KeyboardComponent implements OnInit {
   }
 
   updateService(key) {
-    this.keyboardService.addCheckedKeys(key.key)
+    this.keyboardService.addCheckedKeys(key)
     this.keyboardService.setLastKey(key.key)
     this.sendLastKey.emit(key.key)
   }
@@ -45,8 +45,8 @@ export class KeyboardComponent implements OnInit {
   ngOnInit(): void {
     this.keyboardService.getCheckedKeys().subscribe((keysArray) => {
       keysArray.forEach((key) => {
-        document.querySelector(`[key="${key}"]`).classList.add("checked")
-        this.checkedKeys = keysArray
+        document.querySelector(`[key="${key}"]`).classList.add("checked");
+        this.checkedKeys = keysArray;
       })
     })
   }

@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap');
-:root{
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+:root,.darkmode{
     --bg: #25272b;
     --body-color: #fff;
     --nav-text: #a1a5ae;
@@ -14,21 +16,6 @@
     --key-pressed-color: #fff;
     --key-size: 3em;
     --meta-filter: invert(100%); 
-}
-.darkmode{
-    --bg: #25272b;
-    --body-color: #fff;
-    --nav-text: #a1a5ae;
-    --keyboard-bg: #191b1d;
-    --accent: #0e77da;//#daaa0e;
-    --key-bg: var(--bg);
-    --key-color: #fff;
-    --key-checked-bg: var(--accent);
-    --key-checked-color: #fff;
-    --key-pressed-bg: rgb(110, 110, 110);
-    --key-pressed-color: #fff;
-    --key-size: 3em;
-    --meta-filter: invert(100%);
 }
 .lightmode{
     --bg: #ffffff;
@@ -55,6 +42,10 @@ body{
     font-family: 'Roboto Mono', monospace;
     overflow: overlay;
     transition: background-color .2s, color .2s;
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
 }
 body::-webkit-scrollbar{
     width: .3em;

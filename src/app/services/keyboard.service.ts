@@ -10,9 +10,9 @@ export class KeyboardService {
   getCheckedKeys():Observable<string[]>{
     return of(this.checkedKeys)
   }
-  addCheckedKeys(currentKey:string){
-    if(!this.checkedKeys.includes(currentKey)){
-        return this.checkedKeys.push(currentKey)
+  addCheckedKeys(currentKey){
+    if(!this.checkedKeys.includes(currentKey.code)){
+        return this.checkedKeys.push(currentKey.code)
     }
   }
   resetCheckedKeys(){

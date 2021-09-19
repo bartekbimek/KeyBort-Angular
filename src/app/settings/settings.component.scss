@@ -1,0 +1,32 @@
+.container{
+    padding: 4rem 3rem;
+    margin: 3rem 0;
+    font-family: 'Roboto', sans-serif;
+    background: var(--keyboard-bg);
+    .title_heading{
+        font-weight: 500;
+        font-size: 2.125rem;
+    }
+}
+.settings_section{
+    margin: 3em 0;
+    .secondary_heading{
+        font-weight: 500;
+        font-size: 1.7rem;
+    }
+    .colors_container{
+        display: flex;
+        justify-content: flex-start;
+        margin: 1rem 0;
+        .color_box{
+            height: 3rem;
+            width: 3rem;
+            margin-right: 1rem;
+            cursor: pointer;
+            background: var(--bg);
+            &_selected{
+                border: 3px solid white;
+            }
+        }
+    }
+}
