@@ -3,30 +3,34 @@
     background: var(--keyboard-bg);
     padding: 1em;
     margin-bottom: 1em;
+    position: relative;
 }
-.keyboard__main{
+.keyboard__section{
     display: flex;
     flex-direction: column;
-    width: 50.5em;
-    margin-right: 1em; 
+    margin-left: 1em;
 }
-.main__row{
-    display: flex;
-    .row__group{
+.keyboard__section:first-child{
+    margin-left: 0;
+}
+.keyboard__section--main{
+    width: 50.5em; 
+    .main__row{
         display: flex;
-        justify-content: flex-end;
-        width: 14em;
-    }
-    &--f{
-        justify-content: space-between;
-        margin-bottom: 1em;
+        &--f{
+            justify-content: space-between;
+            margin-bottom: 1em;
+            .row__group{
+                display: flex;
+                justify-content: flex-end;
+                width: 14em;
+            }
+        }
     }
 }
-.keyboard__side{
-    display: flex;
-    flex-direction: column;
+.keyboard__section--arrows{
     min-width: 10.125em;
-    .side__row{
+    .arrows__row{
         display: flex; 
         &--f{
             margin-bottom: 1em;
@@ -37,6 +41,39 @@
          }
      }
 }
+.keyboard__section--numpad{
+    .numpad__top{
+        margin-bottom: 1em; 
+        .numpad__logo{
+            height: 3em;
+            margin: 0.1875em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+            .logo__version{
+                opacity: .3;
+            }
+        } 
+    }
+    .numpad__main{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        .key--num-add{
+            grid-row: span 2;
+            height: 6.3750em;
+        }
+        .key--num-enter{
+            grid-row: span 2;
+            height: 6.3750em;
+        }
+        .key--num-0{
+            grid-column: span 2;
+            width: 6.3750em;
+        }
+    }
+}
 .key{
     border-radius: 0;
     display: flex;
@@ -45,10 +82,11 @@
     color: var(--key-color);
     background: var(--key-bg);
     flex-basis: var(--key-size);
-    height: var(--key-size);        
+    height: var(--key-size);
+    width: var(--key-size);     
     margin: 0.1875em;
     user-select: none;
-    text-transform: uppercase;
+    text-transform: Capitalize;
     font-weight: 600;
     transition: background-color .3s, color .3s;
 }
@@ -68,16 +106,37 @@
     background: var(--key-pressed-bg);
     color: var(--key-pressed-color);
 }
+.key--backspace{
+    flex-grow: 1;
+}
 .key--wide{
     flex-grow: 1;
-    text-transform: Capitalize;
+}
+.key--shiftLeft{
+    flex-grow: 1;
+}
+.key--shiftRight{
+    flex-grow: 1.5;
 }
 .key--space{
     flex-grow: 11;
 }
-.key--capitalized{
-    text-transform: capitalize;
-}
 .key--enter{
     flex-grow: 2;
+}
+.hidden{
+    display: none;
+}
+.toggle-numpad{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -3rem; right: 3rem;
+    height: 3rem;
+    width: calc(var(--key-size)*4);
+    background: var(--accent);
+    user-select: none;
+    cursor: pointer;
+    border: 5px solid black outset;
 }

@@ -1,6 +1,6 @@
-<div class="keyboard__main">
+<div class="keyboard__section keyboard__section--main">
     <div class="main__row main__row--f">
-        <div class="key key--capitalized" key="Escape"><span>Esc</span></div>
+        <div class="key" key="Escape"><span>Esc</span></div>
         <div class="row__group">
             <div class="key" key="F1"><span>F1</span></div>
             <div class="key" key="F2"><span>F2</span></div>
@@ -34,7 +34,7 @@
         <div class="key" key="Digit0"><span>0</span></div>
         <div class="key" key="Minus"><span>-_</span></div>
         <div class="key" key="Equal"><span>=+</span></div>
-        <div class="key key--wide" key="Backspace"><span>&#8592;</span></div>
+        <div class="key key--backspace" key="Backspace"><span>&#8592;</span></div>
     </div>
     <div class="main__row">
         <div class="key key--wide" key="Tab"><span>Tab</span></div>
@@ -65,10 +65,10 @@
         <div class="key" key="KeyL"><span>l</span></div>
         <div class="key" key="Semicolon"><span>;:</span></div>
         <div class="key" key="Quote"><span>'"</span></div>
-        <div class="key key--capitalized key--enter" key="Enter"><span>Enter</span></div>
+        <div class="key key--enter" key="Enter"><span>Enter</span></div>
     </div>
     <div class="main__row">
-        <div class="key key--wide" key="ShiftLeft"><span>Shift</span></div>
+        <div class="key key--shiftLeft" key="ShiftLeft"><span>Shift</span></div>
         <div class="key" key="KeyZ"><span>z</span></div>
         <div class="key" key="KeyX"><span>x</span></div>
         <div class="key" key="KeyC"><span>c</span></div>
@@ -79,7 +79,7 @@
         <div class="key" key="Comma"><span>,&lt;</span></div>
         <div class="key" key="Period"><span>.&gt;</span></div>
         <div class="key" key="Slash"><span>/?</span></div>
-        <div class="key key--wide" key="ShiftRight"><span>Shift</span></div>
+        <div class="key key--shiftRight" key="ShiftRight"><span>shift</span></div>
     </div>
     <div class="main__row">
         <div class="key key--wide" key="ControlLeft"><span>Ctrl</span></div>
@@ -93,28 +93,58 @@
         <div class="key key--wide" key="ControlRight"><span>Ctrl</span></div>
     </div>
 </div>
-<div class="keyboard__side">
-    <div class="side__row side__row--f">
-        <div class="key key--capitalized" key="PrintScreen"><span>Prt<br>Scr</span></div>
-        <div class="key key--capitalized" key="ScrollLock"><span>Scrl<br>Lock</span></div>
-        <div class="key key--capitalized" key="Pause"><span>Paus</span></div>
+<div class="keyboard__section keyboard__section--arrows">
+    <div class="arrows__row arrows__row--f">
+        <div class="key" key="PrintScreen"><span>Prt<br>Scr</span></div>
+        <div class="key" key="ScrollLock"><span>Scrl<br>Lock</span></div>
+        <div class="key" key="Pause"><span>Paus</span></div>
     </div>
-    <div class="side__row">
-        <div class="key key--capitalized" key="Insert"><span>Ins</span></div>
-        <div class="key key--capitalized" key="Home"><span>Home</span></div>
-        <div class="key key--capitalized" key="PageUp"><span>PgUp</span></div>
+    <div class="arrows__row">
+        <div class="key" key="Insert"><span>Ins</span></div>
+        <div class="key" key="Home"><span>Home</span></div>
+        <div class="key" key="PageUp"><span>PgUp</span></div>
     </div>
-    <div class="side__row">
-        <div class="key key--capitalized" key="Delete"><span>Del</span></div>
-        <div class="key key--capitalized" key="End"><span>End</span></div>
-        <div class="key key--capitalized" key="PageDown"><span>PgDn</span></div>
+    <div class="arrows__row">
+        <div class="key" key="Delete"><span>Del</span></div>
+        <div class="key" key="End"><span>End</span></div>
+        <div class="key" key="PageDown"><span>PgDn</span></div>
     </div>
-    <div class="side__row side__row--arrows">
+    <div class="arrows__row arrows__row--arrows">
         <div class="key" key="ArrowUp"><span>&#11205;</span></div>
     </div>
-    <div class="side__row">
+    <div class="arrows__row">
         <div class="key" key="ArrowLeft"><span>&#11207;</span></div>
         <div class="key" key="ArrowDown"><span>&#11206;</span></div>
         <div class="key" key="ArrowRight"><span>&#11208;</span></div>
     </div>
+</div>
+<div class="keyboard__section keyboard__section--numpad hidden">
+    <div class="numpad__top">
+        <div class="numpad__logo">
+            <p class="logo__name">KeyBort<span>Checker</span></p>
+            <p class="logo__version">v1.0</p>
+        </div>
+    </div>
+    <div class="numpad__main">
+        <div class="key" key="NumLock"><span>Num</span></div>
+        <div class="key" key="NumpadDivide"><span>/</span></div>
+        <div class="key" key="NumpadMultiply"><span>*</span></div>
+        <div class="key" key="NumpadSubtract"><span>-</span></div>
+        <div class="key" key="Numpad7"><span>7</span></div>
+        <div class="key" key="Numpad8"><span>8</span></div>
+        <div class="key" key="Numpad9"><span>9</span></div>
+        <div class="key key--num-add" key="NumpadAdd"><span>+</span></div>
+        <div class="key" key="Numpad4"><span>4</span></div>
+        <div class="key" key="Numpad5"><span>5</span></div>
+        <div class="key" key="Numpad6"><span>6</span></div>
+        <div class="key" key="Numpad1"><span>1</span></div>
+        <div class="key" key="Numpad2"><span>2</span></div>
+        <div class="key" key="Numpad3"><span>3</span></div>
+        <div class="key key--num-enter" key="NumpadEnter"><span>=</span></div>
+        <div class="key key--num-0" key="Numpad0"><span>0</span></div>
+        <div class="key" key="NumpadDecimal"><span>,</span></div>
+    </div>
+</div>
+<div class="toggle-numpad">
+    <span>Enable Numpad +</span>
 </div>

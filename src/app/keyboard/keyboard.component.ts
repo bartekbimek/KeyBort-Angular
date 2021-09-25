@@ -33,6 +33,12 @@ export class KeyboardComponent implements OnInit {
       this.updateService(currentKey)
     }
   }
+  enableNumpad(){
+
+  }
+  checkKeyboardWidth(){
+    
+  }
 
   updateService(key) {
     this.keyboardService.addCheckedKeys(key)
